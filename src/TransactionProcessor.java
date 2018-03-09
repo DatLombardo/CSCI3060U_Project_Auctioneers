@@ -34,7 +34,6 @@ public class TransactionProcessor{
                 advertise(seller,itemname,bid,days);
                 break;
             case 4:
-X_IIIIIIIIIIIIIIIIIII_SSSSSSSSSSSSSSS_UUUUUUUUUUUUUU_PPPPPP
                 //bid
                 String seller=line.substring(23,37);
                 String buyer=line.substring(39,53);
