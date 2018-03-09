@@ -21,8 +21,9 @@ public class Parser{
         String line = "";
         while ((line = in.readLine()) != null) {
             Item newItem = new Item(line);
-            this.itemList.put(removeSpaceFill(newItem.getItemName()), newItem);
-        }
+            String newKey = removeSpaceFill(newItem.getItemName()) + removeSpaceFill(newItem.getSellerName());
+            this.itemList.put(newKey, newItem);
+    }
         in.close();
         return this.itemList;
 	}
