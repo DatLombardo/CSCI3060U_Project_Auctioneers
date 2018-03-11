@@ -1,3 +1,8 @@
+/*
+  Auctioneers
+  Michael Lombardo, Joseph Robertson, Michael Setnyk
+  Item.java
+ */
 public class Item{
   public String itemName;
   public String sellerName;
@@ -5,6 +10,10 @@ public class Item{
   public int daysToExpiry;
   public double bid;
 
+  /**
+   * General constructor for Item class, sets instance variables.
+   * @param line
+   */
   public Item(String line){
     this.itemName = line.substring(0,25);
     this.sellerName = line.substring(26,41);
@@ -13,32 +22,64 @@ public class Item{
     this.bid = Double.parseDouble(line.substring(62,69));
   }
 
+  /**
+   * getItemName getter function
+   * @return instance value
+   */
   public String getItemName(){
     return this.itemName;
   }
 
+  /**
+   * getSellerName getter function
+   * @return instance value
+   */
   public String getSellerName(){
     return this.sellerName;
   }
+
+  /**
+   * getHighestBidder getter function
+   * @return instance value
+   */
   public String getHighestBidder(){
     return this.highestBidder;
   }
 
+  /**
+   * getDaysToExpiry getter function
+   * @return instance value
+   */
   public int getDaysToExpiry(){
     return this.daysToExpiry;
   }
 
+  /**
+   * getBid getter function
+   * @return instance value
+   */
   public double getBid(){
     return this.bid;
   }
 
+  /**
+   * setHigherBidder setter function.
+   * @param newBidder
+   */
   public void setHighestBidder(String newBidder){
     this.highestBidder = newBidder;
   }
 
+  /**
+   * itemFileString
+   * Function called to write each of the items in the file
+   * Format: IIIIIIIIIIIIIIIIIII_SSSSSSSSSSSSSSS_UUUUUUUUUUUUUU_DDD_PPPPPP
+   * @return file formatted Item string.
+   */
   public String itemFileString(){
-    //TODO:: Need to fill: username, type and funds with extra characters
-    String finalString = "";
+    Parser parser = new Parser();
+    String finalString = this.itemName + " " + this.sellerName + " " + this.highestBidder + " "
+                    + parser.fillDays(this.daysToExpiry) + " " + parser.fillBids(this.bid);
     return finalString;
   }
 }
