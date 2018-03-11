@@ -1,7 +1,6 @@
 import java.io.*;
 import java.util.*;
 //completly untested
-//not sure about the numbers
 public class TransactionProcessor{
     public void TransactionProcessor(String line, Map<String, Item> items, Map<String, User> users){
         int action=Integer.parseInt(line.substring(0,2));
@@ -63,7 +62,7 @@ public class TransactionProcessor{
 
     }
     private void delete(String username){
-
+        users.remove("username")
     }
     private void advertise(String seller, String itemname, double bid, int days){
 
