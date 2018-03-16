@@ -10,18 +10,33 @@ import java.util.*;
  */
 >>>>>>> 0694a638ab70723b90b9e8c5860d5284841c9fa8
 public class TransactionProcessor{
+    String line;
+    Map<String, Item> items;
+    Map<String, User> users;
+
     /**
      * TransactionProcessor
      * General Constructor for each transaction request, read in the line and complete request.
-     * @param line
      * @param items
      * @param users
      */
-    public void TransactionProcessor(String line, Map<String, Item> items, Map<String, User> users){
+    public void TransactionProcessor(Map<String, Item> items, Map<String, User> users){
+        this.line = line;
+        this.items=items;
+        this.users=users;
+    }
+
+    /**
+     * processTransaction
+     * @param line
+     */
+    public void processTransation(String line){
         int action=Integer.parseInt(line.substring(0,2));
+
         Parser parser = new Parser();
         String username, type, buyer, seller, itemname;
         double bid;
+        //decide which transaction to do
         switch(action){
             case 0:
                 //logout
@@ -71,12 +86,6 @@ public class TransactionProcessor{
                 addCredit(username, credit);
                 break;
         }
-    }
-
-    /**
-     * processTransaction
-     */
-    public void processTransation(){
 
     }
 
@@ -87,6 +96,7 @@ public class TransactionProcessor{
      * @param credit
      */
     private void create(String username, String type, double credit){
+
 
     }
 
