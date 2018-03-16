@@ -30,11 +30,17 @@ public class Backend{
 
 
 			Parser parser = new Parser();
+
+			//Read in the files
 			Map<String, User> userList = parser.readUserFile(usersPath);
 			Map<String, Item> itemList = parser.readItemFile(itemsPath);
+			//
 			ArrayList<String> transactionFile = parser.readTransactionFile(transactionPath);
+
+			//Clear the transaction file
 			parser.clearFile(transactionPath);
 
+			/*
 			User currUser;
 			System.out.println(userList);
 			for (Map.Entry<String, User> entry : userList.entrySet()) {
@@ -47,7 +53,12 @@ public class Backend{
 				currItem = entry.getValue();
 				System.out.println(currItem.getItemName() + currItem.getSellerName()  + currItem.getHighestBidder()
 						+ parser.fillDays(currItem.getDaysToExpiry()) + " " +  parser.fillBids(currItem.getBid()));
-			}
+			}*/
+
+			//Loop through transactions, update user and items
+			TransactionProcessor tp = new TransactionProcessor();
+
+
 		}catch(IOException e){
 		  e.printStackTrace();
 		}
