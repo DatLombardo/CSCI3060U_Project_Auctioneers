@@ -8,7 +8,7 @@ import java.util.*;
   Michael Lombardo, Joseph Robertson, Michael Setnyk
   TransactionProcessor.java
  */
->>>>>>> 0694a638ab70723b90b9e8c5860d5284841c9fa8
+
 public class TransactionProcessor{
     String line;
     Map<String, Item> items;
@@ -105,7 +105,7 @@ public class TransactionProcessor{
      * @param username
      */
     private void delete(String username){
-        users.remove("username")
+        users.remove("username");
     }
 
     /**
