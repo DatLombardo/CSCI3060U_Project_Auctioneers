@@ -4,11 +4,11 @@
   Item.java
  */
 public class Item{
-  public String itemName;
-  public String sellerName;
-  public String highestBidder;
-  public int daysToExpiry;
-  public double bid;
+  private String itemName;
+  private String sellerName;
+  private String highestBidder;
+  private int daysToExpiry;
+  private double bid;
 
   /**
    * General constructor for Item class, sets instance variables.
@@ -66,7 +66,7 @@ public class Item{
    * setHigherBidder setter function.
    * @param newBidder
    */
-  public void setHighestBidder(String newBidder){
+  public void setHighestBidder(String newBidder, double bid){
     this.highestBidder = newBidder;
   }
 

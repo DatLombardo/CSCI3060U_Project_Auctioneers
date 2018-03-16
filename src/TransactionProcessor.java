@@ -1,8 +1,6 @@
 import java.io.*;
 import java.util.*;
 //completly untested
-<<<<<<< HEAD
-=======
 //not sure about the numbers
 
 /*
