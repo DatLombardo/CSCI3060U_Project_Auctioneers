@@ -60,7 +60,7 @@ public class TransactionProcessor{
             case 4:
                 //bid
                 seller = parser.removeSpaceFill(line.substring(23,37));
-                buyer = parser.removeSpaceFill(line.substring(39,53));
+                buyer = line.substring(39,53);
                 itemname = parser.removeSpaceFill(line.substring(3,22));
                 bid = Double.parseDouble(line.substring(54,60));
                 bid(seller,buyer,itemname,bid);
@@ -141,6 +141,6 @@ public class TransactionProcessor{
      * @param balance
      */
     private void addCredit(String username, double balance){
-
+        users.get(username).funds+=balance;
     }
 }
