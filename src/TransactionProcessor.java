@@ -10,6 +10,7 @@ import java.util.*;
  */
 public class TransactionProcessor{
     String line;
+    Parser parser=new Parser;
     Map<String, Item> items;
     Map<String, User> users;
 
@@ -45,42 +46,35 @@ public class TransactionProcessor{
                 break;
             case 1:
                 //create
-                username=line.substring(3,18);
-                type=line.substring(19,21);
-                double credit=Double.parseDouble(line.substring(22,31));
-                create(username,type,credit);
+                create(line);
                 break;
             case 2:
                 //delete
-                username=line.substring(3,18);
+                username=parser.removeSpaceFill(line.substring(3,18));
                 delete(username);
                 break;
             case 3:
                 //advertise
-                seller = line.substring(3,22);
-                itemname=line.substring(23,36);
-                bid = Double.parseDouble(line.substring(41,47));
-                int days=Integer.parseInt(line.substring(37,40));
-                advertise(seller,itemname,bid,days);
+                advertise(line);
                 break;
             case 4:
                 //bid
-                seller = line.substring(23,37);
-                buyer = line.substring(39,53);
-                itemname = line.substring(3,22);
+                seller = parser.removeSpaceFill(line.substring(23,37));
+                buyer = parser.removeSpaceFill(line.substring(39,53));
+                itemname = parser.removeSpaceFill(line.substring(3,22));
                 bid = Double.parseDouble(line.substring(54,60));
                 bid(seller,buyer,itemname,bid);
                 break;
             case 5:
                 //refund
-                seller = line.substring(19,34);
-                buyer = line.substring(3,18);
+                seller = parser.removeSpaceFill(line.substring(19,34));
+                buyer = parser.removeSpaceFill(line.substring(3,18));
                 double amount = Double.parseDouble(line.substring(35,44));
                 refund(seller,buyer,amount);
                 break;
             case 6:
                 //addCredit
-                username = line.substring(3,18);
+                username = parser.removeSpaceFill(line.substring(3,18));
                 credit = Double.parseDouble(line.substring(22,31));
                 addCredit(username, credit);
                 break;
@@ -94,9 +88,10 @@ public class TransactionProcessor{
      * @param type
      * @param credit
      */
-    private void create(String username, String type, double credit){
-
-
+    private void create(String line){
+        User ABC = new User(line);
+        String username=parser.removeSpaceFill(line.substring(3,18));
+        users.add(username,ABC);
     }
 
     /**
@@ -104,18 +99,19 @@ public class TransactionProcessor{
      * @param username
      */
     private void delete(String username){
-        users.remove("username");
+        users.remove(username);
+        //much more stuff
     }
 
     /**
      * advertise
-     * @param seller
-     * @param itemname
-     * @param bid
-     * @param days
+     * @param line
      */
-    private void advertise(String seller, String itemname, double bid, int days){
-
+    private void advertise(String line){
+        item ABC=new item(line);
+        String seller = parser.removeSpaceFill(line.substring(3,22));
+        String itemname=parser.removeSpaceFill(line.substring(23,36));
+        items.add(itemname+seller,ABC);
     }
 
     /**
@@ -126,7 +122,7 @@ public class TransactionProcessor{
      * @param bid
      */
     private void bid(String seller, String buyer, String itemname, double bid){
-
+        items.get(itemname+seller).bid=bid;
     }
 
     /**
@@ -136,7 +132,8 @@ public class TransactionProcessor{
      * @param amount
      */
     private void refund(String seller, String buyer, double amount){
-
+        users.get(seller).funds-=amount;
+        users.get(buyer).funds+=amount;
     }
 
         /**
