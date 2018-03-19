@@ -7,10 +7,10 @@ import java.util.*;
   Auctioneers
   Michael Lombardo, Joseph Robertson, Michael Setnyk
   TransactionProcessor.java
- */
+*/
 public class TransactionProcessor{
     String line;
-    Parser parser=new Parser;
+    Parser parser=new Parser();
     Map<String, Item> items;
     Map<String, User> users;
 
@@ -35,7 +35,7 @@ public class TransactionProcessor{
 
         Parser parser = new Parser();
         String username, type, buyer, seller, itemname;
-        double bid;
+        double bid, credit;
         //decide which transaction to do
         switch(action){
             case 0:
@@ -84,14 +84,12 @@ public class TransactionProcessor{
 
     /**
      * create
-     * @param username
-     * @param type
-     * @param credit
+     * @param line
      */
     private void create(String line){
         User ABC = new User(line);
         String username=parser.removeSpaceFill(line.substring(3,18));
-        users.add(username,ABC);
+        users.put(username,ABC);
     }
 
     /**
@@ -100,7 +98,8 @@ public class TransactionProcessor{
      */
     private void delete(String username){
         users.remove(username);
-        //much more stuff
+
+
     }
 
     /**
@@ -108,10 +107,10 @@ public class TransactionProcessor{
      * @param line
      */
     private void advertise(String line){
-        item ABC=new item(line);
+        Item ABC=new Item(line);
         String seller = parser.removeSpaceFill(line.substring(3,22));
         String itemname=parser.removeSpaceFill(line.substring(23,36));
-        items.add(itemname+seller,ABC);
+        items.put(itemname+seller,ABC);
     }
 
     /**
@@ -122,7 +121,7 @@ public class TransactionProcessor{
      * @param bid
      */
     private void bid(String seller, String buyer, String itemname, double bid){
-        items.get(itemname+seller).bid=bid;
+        items.get(itemname+seller).setHighestBidder(buyer, bid);
     }
 
     /**
