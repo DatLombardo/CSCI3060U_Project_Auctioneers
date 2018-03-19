@@ -181,4 +181,24 @@ public class Parser{
         String filledInput = String.format("%03d", input);
         return filledInput;
     }
+
+    /**
+     * splitTransactions
+     * used to break up delete transactions and non-delete transactions
+     * such that all deletes are handled before anything else.
+     *
+     */
+
+    public void splitTransactions() throws IOException {
+        for (int i = 0; i < transactionFile.size(); i++) {
+            System.out.println(transactionFile.get(i));
+            int action = Integer.parseInt(transactionFile.get(i).substring(0,2));
+            if (action == 2) {
+                this.deleteTransactions.add(transactionFile.get(i));
+            }
+            else {
+                this.transactions.add(transactionFile.get(i));
+            }
+        }
+    }
 }

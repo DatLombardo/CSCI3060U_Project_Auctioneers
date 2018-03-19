@@ -50,7 +50,7 @@ public class TransactionProcessor{
                 break;
             case 2:
                 //delete
-                username=parser.removeSpaceFill(line.substring(3,18));
+                username = line.substring(3,18);
                 delete(username);
                 break;
             case 3:
@@ -96,11 +96,23 @@ public class TransactionProcessor{
      * delete
      * @param username
      */
-    private void delete(String username){
-        users.remove(username);
+     private void delete(String username){
+         //Remove user instance
+         users.remove(parser.removeSpaceFill(username));
 
-
-    }
+         Item currItem;
+         //Remove potential instances of the user within the item list
+         for (Map.Entry<String, Item> entry : this.items.entrySet()) {
+             currItem = entry.getValue();
+             //Deleting a user who is selling items, need to delete item.
+             if (currItem.getSellerName() == username){
+                 items.remove(entry.getKey());
+             }
+             if (currItem.getHighestBidder() == username){
+                 currItem.setHighestBidder(currItem.getSellerName(), currItem.getBid());
+             }
+         }
+     }
 
     /**
      * advertise
