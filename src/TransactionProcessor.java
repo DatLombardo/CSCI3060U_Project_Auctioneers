@@ -104,7 +104,7 @@ public class TransactionProcessor{
      * @param username
      */
     private void delete(String username){
-        users.remove("username")
+        users.remove("username");
     }
 
     /**
@@ -139,7 +139,7 @@ public class TransactionProcessor{
 
     }
 
-    /**
+        /**
      * addCredit
      * @param username
      * @param balance
