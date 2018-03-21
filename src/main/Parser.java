@@ -12,6 +12,9 @@ public class Parser{
   public Map<String, Item> itemList = new HashMap<String, Item>();
   public ArrayList<String> transactionFile = new ArrayList<String>();
 
+  public ArrayList<String> transactions = new ArrayList<String>();
+  public ArrayList<String> deleteTransactions = new ArrayList<String>();
+
     /**
      * Default General Constructor for Parser class, defined to allow for system to use Parser anywhere.
      */
@@ -197,7 +200,7 @@ public class Parser{
                 this.deleteTransactions.add(transactionFile.get(i));
             }
             else {
-                this.transactions.add(transactionFile.get(i));
+                  this.transactions.add(transactionFile.get(i));
             }
         }
     }
