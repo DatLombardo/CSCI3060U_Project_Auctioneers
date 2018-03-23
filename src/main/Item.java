@@ -1,3 +1,5 @@
+package main;
+
 /*
   Auctioneers
   Michael Lombardo, Joseph Robertson, Michael Setnyk
