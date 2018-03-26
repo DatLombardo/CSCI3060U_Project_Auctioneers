@@ -1,6 +1,8 @@
-package main;
 import java.io.*;
 import java.util.*;
+import org.junit.runner.JUnitCore;
+import org.junit.runner.Result;
+import org.junit.runner.notification.Failure;
 
 /*
   Auctioneers
@@ -9,11 +11,13 @@ import java.util.*;
  */
 public class Backend{
 	//Containers for user and item class
-	public static void main(String[] args){
+	public static void main(String[] args) throws IOException{
+		Result result = JUnitCore.runClasses(BackendTest.class);
+
 		try{
 			if(args.length!=3){
 				System.out.println("Please enter a transaction file,  user file, then a items file");
-				return;
+				throw new IOException();
 			}
 			String transactionPath = args[0];
 			String usersPath = args[1];
@@ -53,5 +57,12 @@ public class Backend{
 		}catch(IOException e){
 		  e.printStackTrace();
 		}
+
+		for (Failure failure : result.getFailures()) {
+		System.out.println(failure.toString());
+ }
+
+
+		 System.out.println("SUCCESSFUL TEST RUN: " + result.wasSuccessful());
 	}
 }

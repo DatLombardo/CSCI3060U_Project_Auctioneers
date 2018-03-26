@@ -1,14 +1,16 @@
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
-
-class BackendTest {
+public class BackendTest {
 
     @Test
-    void main() {
+    public void test1() {
       //test to see if no arguments do not work
-      System.out.println("main");
+      System.out.println("main test1");
        String[] args = null;
-       Main.main(args);
-       assertNotNULL(args);
+       String[] expected = {"file1", "file2", "file3"};
+  //     assertArrayEquals(null,args,expected);
+               assertEquals(5, 4);
     }
 }
