@@ -15,6 +15,7 @@ public class Backend{
 	public static void main(String[] args) throws IOException{
 		Result result = JUnitCore.runClasses(BackendTest.class);
 		Result result2 = JUnitCore.runClasses(ItemTest.class);
+		Result result3 = JUnitCore.runClasses(UserTest.class);
 
 		try{
 			if(args.length!=3){
@@ -64,8 +65,13 @@ public class Backend{
 		for (Failure failure : result2.getFailures()) {
 			System.out.println(failure.toString());
  		}
+		for (Failure failure : result3.getFailures()) {
+			System.out.println(failure.toString());
+ 		}
 
 
 		 System.out.println("SUCCESSFUL TEST RUN: " + result.wasSuccessful());
+		 System.out.println("SUCCESSFUL TEST RUN: " + result2.wasSuccessful());
+		 System.out.println("SUCCESSFUL TEST RUN: " + result3.wasSuccessful());
 	}
 }

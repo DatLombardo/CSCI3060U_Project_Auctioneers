@@ -27,7 +27,7 @@ public class ItemTest {
     @Test
     public void test5() {
 	Item A = new Item("kite surfing set          seller01        username01      014 0300.00");
-	assertEquals(300.0, A.getBid());
+	assertTrue(300.0==A.getBid());
     }
     @Test
     public void test6() {
