@@ -3,8 +3,8 @@ username02      BS 010000.00
 username03      SS 010000.00
 admin02         AA 090090.00
 user02          FS 000090.00
-buyer01         BS 1360590.00
-seller01        FS -1268500.00
+buyer01         BS 1369590.00
+seller01        FS -1277500.00
 brokeuser03     SS 000005.00
 username01      FS 010000.00
 brokeuser02     BS 000005.00

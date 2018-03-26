@@ -80,10 +80,15 @@ public class Parser{
      * @param path - desired path to file of removal
      * @throws IOException
      */
-    public void clearFile(String path) throws IOException{
+    public void clearFile(String path){
+      try{
         PrintWriter writer = new PrintWriter(path);
         writer.print("");
         writer.close();
+      }catch(IOException e){
+        e.printStackTrace();
+      }
+
     }
 
     /**

@@ -14,8 +14,6 @@ public class ItemTest {
 
 
 
-
-
   /*  @Test
     public void test2()throws IOException{
       //test to see if no arguments do not work

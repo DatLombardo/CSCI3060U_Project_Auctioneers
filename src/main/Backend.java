@@ -14,15 +14,11 @@ public class Backend{
 	//Containers for user and item class
 	public static void main(String[] args)  throws NullPointerException{
 		Result result = JUnitCore.runClasses(BackendTest.class);
-
-		if(args == null || args.length!=3){
-			System.out.println("Please enter a transaction file,  user file, then a items file");
-			return;
-		}
-
-		Backend backend = new Backend(args);
+		Result result2 = JUnitCore.runClasses(ItemTest.class);
+		Result result3 = JUnitCore.runClasses(UserTest.class);
 		try{
-		backend.doWork();
+			Backend backend = new Backend(args);
+			backend.doWork();
 		}catch(IOException e){
 			e.printStackTrace();
 		}
@@ -38,7 +34,11 @@ public class Backend{
 	String usersPath;
 	String itemsPath;
 
-	public Backend(String[] args)throws NullPointerException{
+	public Backend(String[] args)throws IOException{
+		if(args == null || args.length!=3){
+			System.out.println("Please enter a transaction file,  user file, then a items file");
+			throw new IOException();
+		}
 		transactionPath = args[0];
 		usersPath = args[1];
 		itemsPath = args[2];
