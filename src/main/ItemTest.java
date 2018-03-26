@@ -3,23 +3,17 @@ import org.junit.Test;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
-public class BackendTest {
-
-  @Test(expected = NullPointerException.class)
-  public void test1()throws NullPointerException{
-    //test to see if no arguments do not work
-     String[] args=null;
-      Backend b = new Backend(args);
-
-  }
+public class ItemTest {
 
   @Test
-  public void test2()throws NullPointerException{
+  public void test1(){
     //test to see if no arguments do not work
-     String[] args=new String[]{"transactionFile.txt","userlist.txt","itemlist.txt"};
-      Backend b = new Backend(args);
-      return;
+    // Backend.main(args);
+    assertEquals(1,2);
   }
+
+
+
 
 
   /*  @Test

@@ -60,7 +60,6 @@ public class TransactionProcessor{
                 buyer = line.substring(44,59);
                 itemname = parser.removeSpaceFill(line.substring(3,27));
                 bid = Double.parseDouble(line.substring(60,66));
-                System.out.println(bid);
                 bid(seller,buyer,itemname,bid);
                 break;
             case 5:

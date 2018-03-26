@@ -12,28 +12,46 @@ import org.junit.runner.notification.Failure;
 
 public class Backend{
 	//Containers for user and item class
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args)  throws NullPointerException{
 		Result result = JUnitCore.runClasses(BackendTest.class);
 
+		if(args == null || args.length!=3){
+			System.out.println("Please enter a transaction file,  user file, then a items file");
+			return;
+		}
+
+		Backend backend = new Backend(args);
 		try{
-			if(args.length!=3){
-				System.out.println("Please enter a transaction file,  user file, then a items file");
-				throw new IOException();
-			}
-			String transactionPath = args[0];
-			String usersPath = args[1];
-			String itemsPath = args[2];
+		backend.doWork();
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		for (Failure failure : result.getFailures()) {
+		System.out.println(failure.toString());
+		}
+
+		System.out.println("SUCCESSFUL TEST RUN: " + result.wasSuccessful());
+	}
 
 
+	String transactionPath;
+	String usersPath;
+	String itemsPath;
+
+	public Backend(String[] args)throws NullPointerException{
+		transactionPath = args[0];
+		usersPath = args[1];
+		itemsPath = args[2];
+
+	}
+
+	private Boolean doWork() throws IOException{
 			Parser parser = new Parser();
-
 			//Read in the files
 			Map<String, User> userList = parser.readUserFile(usersPath);
 			Map<String, Item> itemList = parser.readItemFile(itemsPath);
-
 			//
 			ArrayList<String> transactionFile = parser.readTransactionFile(transactionPath);
-
 			parser.splitTransactions();
 			ArrayList<String> transactions = parser.transactions;
 			ArrayList<String> deleteTransactions = parser.deleteTransactions;
@@ -52,16 +70,6 @@ public class Backend{
 
 			parser.writeAccounts("userlist.txt", tp.users);
 			parser.writeItems("itemlist.txt", tp.items);
-
-		}catch(IOException e){
-		  e.printStackTrace();
-		}
-
-		for (Failure failure : result.getFailures()) {
-		System.out.println(failure.toString());
- }
-
-
-		 System.out.println("SUCCESSFUL TEST RUN: " + result.wasSuccessful());
+			return true;
 	}
 }
