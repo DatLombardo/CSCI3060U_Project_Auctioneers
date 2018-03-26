@@ -14,6 +14,7 @@ public class Backend{
 	//Containers for user and item class
 	public static void main(String[] args) throws IOException{
 		Result result = JUnitCore.runClasses(BackendTest.class);
+		Result result2 = JUnitCore.runClasses(ItemTest.class);
 
 		try{
 			if(args.length!=3){
@@ -58,8 +59,11 @@ public class Backend{
 		}
 
 		for (Failure failure : result.getFailures()) {
-		System.out.println(failure.toString());
- }
+			System.out.println(failure.toString());
+ 		}
+		for (Failure failure : result2.getFailures()) {
+			System.out.println(failure.toString());
+ 		}
 
 
 		 System.out.println("SUCCESSFUL TEST RUN: " + result.wasSuccessful());
