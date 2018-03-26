@@ -1,4 +1,5 @@
 package main;
+
 import java.io.*;
 import java.util.*;
 
@@ -7,6 +8,7 @@ import java.util.*;
   Michael Lombardo, Joseph Robertson, Michael Setnyk
   Backend.java
  */
+
 public class Backend{
 	//Containers for user and item class
 	public static void main(String[] args){
@@ -25,30 +27,28 @@ public class Backend{
 			//Read in the files
 			Map<String, User> userList = parser.readUserFile(usersPath);
 			Map<String, Item> itemList = parser.readItemFile(itemsPath);
+
 			//
 			ArrayList<String> transactionFile = parser.readTransactionFile(transactionPath);
 
+			parser.splitTransactions();
+			ArrayList<String> transactions = parser.transactions;
+			ArrayList<String> deleteTransactions = parser.deleteTransactions;
+
 			//Clear the transaction file
-			parser.clearFile(transactionPath);
-
-
-			User currUser;
-			System.out.println(userList);
-			for (Map.Entry<String, User> entry : userList.entrySet()) {
-				currUser = entry.getValue();
-				System.out.println(currUser.getUsername() + currUser.getType() + " " + parser.fillFunds(currUser.getFunds()));
-			}
-
-			Item currItem;
-			for (Map.Entry<String, Item> entry : itemList.entrySet()) {
-				currItem = entry.getValue();
-				System.out.println(currItem.getItemName() + currItem.getSellerName()  + currItem.getHighestBidder()
-						+ parser.fillDays(currItem.getDaysToExpiry()) + " " +  parser.fillBids(currItem.getBid()));
-			}
+			//parser.clearFile(transactionPath);
 
 			//Loop through transactions, update user and items
-			TransactionProcessor tp = new TransactionProcessor();
+			TransactionProcessor tp = new TransactionProcessor(itemList, userList);
+			for (int i = 0; i < deleteTransactions.size(); i++) {
+				tp.processTransation(deleteTransactions.get(i));
+			}
+			for (int i = 0; i < transactions.size(); i++) {
+				tp.processTransation(transactions.get(i));
+			}
 
+			parser.writeAccounts("userlist.txt", tp.users);
+			parser.writeItems("itemlist.txt", tp.items);
 
 		}catch(IOException e){
 		  e.printStackTrace();

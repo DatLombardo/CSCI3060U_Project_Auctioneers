@@ -1,9 +1,6 @@
 package main;
-
 import java.io.*;
 import java.util.*;
-//completly untested
-//not sure about the numbers
 
 /*
   Auctioneers
@@ -11,10 +8,10 @@ import java.util.*;
   TransactionProcessor.java
 */
 public class TransactionProcessor{
-    String line;
-    Parser parser=new Parser();
-    Map<String, Item> items;
-    Map<String, User> users;
+    private String line;
+    public Parser parser=new Parser();
+    public Map<String, Item> items;
+    public Map<String, User> users;
 
     /**
      * TransactionProcessor
@@ -22,8 +19,7 @@ public class TransactionProcessor{
      * @param items
      * @param users
      */
-    public void TransactionProcessor(Map<String, Item> items, Map<String, User> users){
-        this.line = line;
+    public TransactionProcessor(Map<String, Item> items, Map<String, User> users){
         this.items=items;
         this.users=users;
     }
@@ -61,10 +57,11 @@ public class TransactionProcessor{
                 break;
             case 4:
                 //bid
-                seller = parser.removeSpaceFill(line.substring(23,37));
-                buyer = line.substring(39,53);
-                itemname = parser.removeSpaceFill(line.substring(3,22));
-                bid = Double.parseDouble(line.substring(54,60));
+                seller = parser.removeSpaceFill(line.substring(28,43));
+                buyer = line.substring(44,59);
+                itemname = parser.removeSpaceFill(line.substring(3,27));
+                bid = Double.parseDouble(line.substring(60,66));
+                System.out.println(bid);
                 bid(seller,buyer,itemname,bid);
                 break;
             case 5:
