@@ -1,4 +1,3 @@
-
 import java.io.*;
 import java.util.*;
 
@@ -95,14 +94,14 @@ public class Parser{
      * @param path - desired path for write
      * @throws IOException
      */
-    public void writeAccounts(String path) throws IOException{
+    public void writeAccounts(String path, Map<String, User> writeUsers) throws IOException{
         File writer = new File(path);
         FileOutputStream fileOut = new FileOutputStream(writer);
 
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fileOut));
 
         User currUser;
-        for (Map.Entry<String, User> entry : userList.entrySet()) {
+        for (Map.Entry<String, User> entry : writeUsers.entrySet()) {
             currUser = entry.getValue();
             bw.write(currUser.userFileString());
             bw.newLine();
@@ -119,14 +118,14 @@ public class Parser{
      * @param path - desired path for write
      * @throws IOException
      */
-    public void writeItems(String path) throws IOException{
+    public void writeItems(String path, Map<String, Item> writeItems ) throws IOException{
         File writer = new File(path);
         FileOutputStream fileOut = new FileOutputStream(writer);
 
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fileOut));
 
         Item currItem;
-        for (Map.Entry<String, Item> entry : this.itemList.entrySet()) {
+        for (Map.Entry<String, Item> entry : writeItems.entrySet()) {
             currItem = entry.getValue();
             bw.write(currItem.itemFileString());
             bw.newLine();
@@ -195,7 +194,6 @@ public class Parser{
 
     public void splitTransactions() throws IOException {
         for (int i = 0; i < transactionFile.size(); i++) {
-            System.out.println(transactionFile.get(i));
             int action = Integer.parseInt(transactionFile.get(i).substring(0,2));
             if (action == 2) {
                 this.deleteTransactions.add(transactionFile.get(i));

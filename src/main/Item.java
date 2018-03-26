@@ -69,6 +69,7 @@ public class Item{
    */
   public void setHighestBidder(String newBidder, double bid){
     this.highestBidder = newBidder;
+    this.bid = bid;
   }
 
   /**
