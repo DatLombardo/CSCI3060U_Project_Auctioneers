@@ -29,6 +29,13 @@ public class BackendTest {
      assertFalse("should not be right",false);
   }
 
+  @Test
+  public void test4()throws IOException{
+    //test to see if not three arguments work
+    ArrayList<String> deleteTransactions = new ArrayList<String>;
+    tp.processTransation(deleteTransactions.get(i));
 
 
+   assertFalse
+  }
 }

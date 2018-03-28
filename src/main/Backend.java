@@ -17,6 +17,7 @@ public class Backend{
 		Result result2 = JUnitCore.runClasses(ItemTest.class);
 		Result result3 = JUnitCore.runClasses(UserTest.class);
 		try{
+			//this is where all the work is done
 			Backend backend = new Backend(args);
 			backend.doWork();
 		}catch(IOException e){
@@ -55,9 +56,6 @@ public class Backend{
 			parser.splitTransactions();
 			ArrayList<String> transactions = parser.transactions;
 			ArrayList<String> deleteTransactions = parser.deleteTransactions;
-
-			//Clear the transaction file
-			//parser.clearFile(transactionPath);
 
 			//Loop through transactions, update user and items
 			TransactionProcessor tp = new TransactionProcessor(itemList, userList);
