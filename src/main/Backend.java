@@ -16,6 +16,8 @@ public class Backend{
 		Result result = JUnitCore.runClasses(BackendTest.class);
 		Result result2 = JUnitCore.runClasses(ItemTest.class);
 		Result result3 = JUnitCore.runClasses(UserTest.class);
+		Result result4 = JUnitCore.runClasses(ParserTest.class);
+		Result result5 = JUnitCore.runClasses(TransactionProcessorTest.class);
 		try{
 			//this is where all the work is done
 			Backend backend = new Backend(args);
@@ -24,10 +26,26 @@ public class Backend{
 			e.printStackTrace();
 		}
 		for (Failure failure : result.getFailures()) {
-		System.out.println(failure.toString());
+			System.out.println(failure.toString());
+		}
+		for (Failure failure : result2.getFailures()) {
+			System.out.println(failure.toString());
+		}
+		for (Failure failure : result3.getFailures()) {
+			System.out.println(failure.toString());
+		}
+		for (Failure failure : result4.getFailures()) {
+			System.out.println(failure.toString());
+		}
+		for (Failure failure : result5.getFailures()) {
+			System.out.println(failure.toString());
 		}
 
-		System.out.println("SUCCESSFUL TEST RUN: " + result.wasSuccessful());
+		System.out.println("SUCCESSFUL TEST(Backend) RUN: " + result.wasSuccessful());
+		System.out.println("SUCCESSFUL TEST(Item) RUN: " + result2.wasSuccessful());
+		System.out.println("SUCCESSFUL TEST(User) RUN: " + result3.wasSuccessful());
+		System.out.println("SUCCESSFUL TEST(Parser) RUN: " + result4.wasSuccessful());
+		System.out.println("SUCCESSFUL TEST(TransactionProcessor) RUN: " + result5.wasSuccessful());
 	}
 
 

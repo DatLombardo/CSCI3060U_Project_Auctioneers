@@ -140,8 +140,8 @@ public class TransactionProcessor{
      * @param amount
      */
     private void refund(String seller, String buyer, double amount){
-        users.get(seller).funds-=amount;
-        users.get(buyer).funds+=amount;
+//      users.get(seller).funds-=amount;
+//      users.get(buyer).funds+=amount;
     }
 
         /**
