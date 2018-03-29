@@ -20,7 +20,7 @@ public class Item{
     this.sellerName = line.substring(26,41);
     this.highestBidder = line.substring(42,57);
     this.daysToExpiry = Integer.parseInt(line.substring(58,61));
-    this.bid = Double.parseDouble(line.substring(62,69));
+    this.bid = Double.parseDouble(line.substring(62));
   }
 
   /**

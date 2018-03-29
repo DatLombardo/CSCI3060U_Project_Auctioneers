@@ -50,9 +50,10 @@ public class TransactionProcessorTest {
       //test create is covered
       TransactionProcessor tp = new TransactionProcessor(items, users);
       String create = "01 Admin02         AA 000100.00";
-      User user= new User("Admin02         AA 0000100.00");
+      User user= new User("Admin02         AA 000100.00");
       tp.processTransation(create);
-      assertEquals(user,tp.users.get(user.getUsername()));
+      User mapUser = tp.users.get("Admin02");
+      assertEquals(user.getUsername(),mapUser.getUsername());
     }
 
 
@@ -61,13 +62,13 @@ public class TransactionProcessorTest {
     public void test5(){
       Map<String, Item> items= new HashMap<String, Item>();
       Map<String, User> users= new HashMap<String, User>();
-      User user= new User("user01          FS 0000900.00");
+      User user= new User("user01          FS 000900.00");
       Item item = new Item("itemName3                 user01          Admin01         020 030.00");
       users.put("user01", user);
       items.put("itemName3"+"user01", item);
       //make sure in the map
-      assertEquals(user,users.get(user.getUsername()));
-      assertEquals(items,items.get(item.getItemName()));
+      assertEquals(user,users.get("user01"));
+      assertEquals(item,items.get("itemName3user01"));
 
       //test delete is covered
       TransactionProcessor tp = new TransactionProcessor(items, users);
@@ -84,12 +85,12 @@ public class TransactionProcessorTest {
       Map<String, Item> items= new HashMap<String, Item>();
       Map<String, User> users= new HashMap<String, User>();
       Item item = new Item("itemName3                 user01          Admin01         020 030.00");
-      items.put("itemName3"+"user01", item);
+      items.put("itemName3"+"Admin01", item);
       //test advertise is covered
       TransactionProcessor tp = new TransactionProcessor(items, users);
-      String advertise = "03 Item01              Admin01         005   015.00";
+      String advertise = "03 itemName3                 Admin01         005 030.00";
       tp.processTransation(advertise);
-      assertEquals(item,tp.items.get(item.getItemName()));
+      assertEquals(item,tp.items.get("itemName3"+"Admin01"));
     }
 
     @Test
@@ -97,15 +98,13 @@ public class TransactionProcessorTest {
       //test the item is updated
       Map<String, Item> items= new HashMap<String, Item>();
       Map<String, User> users= new HashMap<String, User>();
-      TransactionProcessor tp = new TransactionProcessor(items, users);
       Item item = new Item("itemName3                 user01          Admin01         020 030.00");
-      items.put("itemName3"+"user01", item);
+      items.put("itemName3"+"Admin01", item);
+      TransactionProcessor tp = new TransactionProcessor(items, users);
       //test advertise is covered
-      String advertise = "03 Item01              Admin01         005   015.00";
-      tp.processTransation(advertise);
-      String bid = "04 Item01                   Admin01         user01          200.00";
+      String bid = "04 itemName3                 Admin01         user01          200.00";
       tp.processTransation(bid);
-      assertEquals(200.00,tp.items.get(item.getItemName()).getBid());
+      assertEquals(200.00,tp.items.get("itemName3Admin01").getBid(),0);
 
     }
 
@@ -114,12 +113,16 @@ public class TransactionProcessorTest {
       //test that user has more money in their account
       Map<String, Item> items= new HashMap<String, Item>();
       Map<String, User> users= new HashMap<String, User>();
-      User user= new User("Admin02         AA 0000100.00");
-      users.put(user.getUsername(),user);
+      User seller= new User("Admin02         AA 0000100.00");
+      User buyer= new User("buyer01         FS 000100.00");
+
+      users.put(seller.getUsername(),seller);
+      users.put(buyer.getUsername(),buyer);
+
       TransactionProcessor tp = new TransactionProcessor(items, users);
-      String refund = "05 Admin02         seller01        000500.00";
+      String refund = "05 buyer01         Admin02         000500.00";
       tp.processTransation(refund);
-      assertEquals(user.getFunds() + 500.00,tp.users.get(user.getUsername()).getFunds());
+      assertEquals(600.0,tp.users.get(buyer.getUsername()).getFunds(),0);
     }
 
     @Test
@@ -132,7 +135,7 @@ public class TransactionProcessorTest {
       TransactionProcessor tp = new TransactionProcessor(items, users);
       String addCredit = "06 User01          FS 000500.00";
       tp.processTransation(addCredit);
-      assertEquals(user.getFunds() + 500.00,tp.users.get(user.getUsername()).getFunds());
+      assertEquals(600,tp.users.get(user.getUsername()).getFunds(),0);
 
     }
 
