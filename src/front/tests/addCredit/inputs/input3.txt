@@ -1,0 +1,13 @@
+login
+admin
+add
+-10
+500
+notexistacc
+fsaccount
+add
+2000
+1000
+bsaccount
+logout
+EOF

@@ -1,0 +1,20 @@
+login
+admin
+create
+fsaccount 2
+add
+advertise
+fsaccount
+aloooooooongname
+
+fsaccount2
+SF
+qw
+WQ
+aa
+FS
+0
+1000000
+9053.17
+logout
+EOF

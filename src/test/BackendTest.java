@@ -7,5 +7,6 @@ class BackendTest {
     @ParameterizedTest
     @ValueSource(strings = { "Hello", "JUnit" })
     void main() {
+	fail("adsfdasf");
     }
 }

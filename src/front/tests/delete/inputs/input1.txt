@@ -1,0 +1,9 @@
+login
+admin
+delete
+admin2
+admin
+notexistacc
+deletedacc
+yes
+logout

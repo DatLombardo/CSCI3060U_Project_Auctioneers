@@ -1,0 +1,11 @@
+login
+fsaccount
+bid
+Laptop
+admin
+1dolla
+20.3.3
+1000
+200
+logout
+EOF
