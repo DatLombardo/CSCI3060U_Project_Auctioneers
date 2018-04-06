@@ -1,0 +1,7 @@
+Login
+admin2
+addcredit
+newUser123
+500
+Logout
+EOF

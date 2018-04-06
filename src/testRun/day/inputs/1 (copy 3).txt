@@ -1,0 +1,8 @@
+Login
+admin
+Create
+Admin02
+AA
+100
+Logout
+EOF

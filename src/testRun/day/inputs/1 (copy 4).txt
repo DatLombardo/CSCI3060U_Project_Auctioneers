@@ -1,0 +1,6 @@
+Login
+admin
+Delete
+ssaccount
+Logout
+EOF

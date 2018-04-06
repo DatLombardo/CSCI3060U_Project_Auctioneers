@@ -1,0 +1,8 @@
+Login
+admin
+Advertise
+Acer Monster Computer
+2000.00
+20
+Logout
+EOF

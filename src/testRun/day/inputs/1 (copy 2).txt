@@ -1,0 +1,8 @@
+Login
+admin
+Bid
+Test_Item_List_Long_name
+notclyvewidjaya
+300
+Logout
+EOF
