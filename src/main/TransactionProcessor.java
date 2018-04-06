@@ -1,9 +1,5 @@
-package main;
-
 import java.io.*;
 import java.util.*;
-//completly untested
-//not sure about the numbers
 
 /*
   Auctioneers
@@ -11,10 +7,10 @@ import java.util.*;
   TransactionProcessor.java
 */
 public class TransactionProcessor{
-    String line;
-    Parser parser=new Parser();
-    Map<String, Item> items;
-    Map<String, User> users;
+    private String line;
+    public Parser parser=new Parser();
+    public Map<String, Item> items;
+    public Map<String, User> users;
 
     /**
      * TransactionProcessor
@@ -22,8 +18,7 @@ public class TransactionProcessor{
      * @param items
      * @param users
      */
-    public void TransactionProcessor(Map<String, Item> items, Map<String, User> users){
-        this.line = line;
+    public TransactionProcessor(Map<String, Item> items, Map<String, User> users){
         this.items=items;
         this.users=users;
     }
@@ -34,7 +29,7 @@ public class TransactionProcessor{
      */
     public void processTransation(String line){
         int action=Integer.parseInt(line.substring(0,2));
-
+        String input = line.substring(3);
         Parser parser = new Parser();
         String username, type, buyer, seller, itemname;
         double bid, credit;
@@ -48,7 +43,7 @@ public class TransactionProcessor{
                 break;
             case 1:
                 //create
-                create(line);
+                create(input);
                 break;
             case 2:
                 //delete
@@ -57,28 +52,20 @@ public class TransactionProcessor{
                 break;
             case 3:
                 //advertise
-                advertise(line);
+                advertise(input);
                 break;
             case 4:
                 //bid
-                seller = parser.removeSpaceFill(line.substring(23,37));
-                buyer = line.substring(39,53);
-                itemname = parser.removeSpaceFill(line.substring(3,22));
-                bid = Double.parseDouble(line.substring(54,60));
-                bid(seller,buyer,itemname,bid);
+                bid(input);
                 break;
             case 5:
                 //refund
-                seller = parser.removeSpaceFill(line.substring(19,34));
-                buyer = parser.removeSpaceFill(line.substring(3,18));
-                double amount = Double.parseDouble(line.substring(35,44));
-                refund(seller,buyer,amount);
+
+                refund(input);
                 break;
             case 6:
                 //addCredit
-                username = parser.removeSpaceFill(line.substring(3,18));
-                credit = Double.parseDouble(line.substring(22,31));
-                addCredit(username, credit);
+                addCredit(input);
                 break;
         }
 
@@ -90,7 +77,7 @@ public class TransactionProcessor{
      */
     private void create(String line){
         User ABC = new User(line);
-        String username=parser.removeSpaceFill(line.substring(3,18));
+        String username=parser.removeSpaceFill(line.substring(0,15));
         users.put(username,ABC);
     }
 
@@ -121,9 +108,20 @@ public class TransactionProcessor{
      * @param line
      */
     private void advertise(String line){
-        Item ABC=new Item(line);
-        String seller = parser.removeSpaceFill(line.substring(3,22));
-        String itemname=parser.removeSpaceFill(line.substring(23,36));
+        System.out.println("LINE: "+ line);
+
+        //item name
+        String input = line.substring(0,25);
+        input+="NULL";
+        for (int i =0;i<=11;i++){
+          input+= " ";
+        }
+        input+=line.substring(25);
+        System.out.println("input: "+ input);
+
+        Item ABC=new Item(input);
+        String seller = ABC.getSellerName();
+        String itemname= ABC.getItemName();
         items.put(itemname+seller,ABC);
     }
 
@@ -134,8 +132,17 @@ public class TransactionProcessor{
      * @param itemname
      * @param bid
      */
-    private void bid(String seller, String buyer, String itemname, double bid){
+    private void bid(String line){
+      String seller = parser.removeSpaceFill(line.substring(26,40));
+      String itemname = parser.removeSpaceFill(line.substring(0,25));
+      String buyer = line.substring(42,56);
+      double bid = Double.parseDouble(line.substring(58));
+
+      if(items.get(itemname+seller)!=null){
         items.get(itemname+seller).setHighestBidder(buyer, bid);
+      }else{
+        System.out.println("ERROR: item does not exist");
+      }
     }
 
     /**
@@ -144,17 +151,42 @@ public class TransactionProcessor{
      * @param buyer
      * @param amount
      */
-    private void refund(String seller, String buyer, double amount){
-        users.get(seller).funds-=amount;
-        users.get(buyer).funds+=amount;
-    }
+    private void refund(String line){
+      System.out.println("line: "+line);
+      String buyer =  line.substring(0,15);
+      String seller = line.substring(16,31);
+      double amount = Double.parseDouble(line.substring(32));
+      System.out.println("buyer: "+buyer);
+      System.out.println("seller: "+seller);
+      System.out.println("amount: "+amount);
 
+      System.out.println("sellerUser: "+ users.get(seller));
+      System.out.println("buyerUser: "+ users.get(buyer));
+
+
+      User sellerUser =  users.get(seller);
+      User buyerUser =   users.get(buyer);
+      if(sellerUser != null && buyerUser != null){
+         users.get(seller).setFunds(sellerUser.getFunds() - amount);
+          users.get(buyer).setFunds(buyerUser.getFunds() + amount);
+        }else{
+          System.out.println("ERROR: error seller and buyer no longer exist");
+        }
+      }
         /**
      * addCredit
      * @param username
      * @param balance
      */
-    private void addCredit(String username, double balance){
+    private void addCredit(String line){
+
+  String username = line.substring(0,15);
+  double balance = Double.parseDouble(line.substring(18));
+      if(users.get(username) != null){
         users.get(username).funds+=balance;
+
+        }else{
+          System.out.println("ERROR: error user does not exist");
+        }
     }
 }

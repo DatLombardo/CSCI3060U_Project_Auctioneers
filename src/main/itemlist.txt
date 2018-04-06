@@ -1,4 +1,3 @@
-itemspew01                seller01        username01      002 0010.00
-itemspew02                seller01        admin01         006 0050.00
 pentax                    seller01        username02      012 0300.00
-kite surfing set          seller01        username01      014 0300.00
+itemspew02                seller01        admin01         006 0050.00
+itemspew01                seller01        username01      002 0010.00
