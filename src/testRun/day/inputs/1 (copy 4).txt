@@ -1,6 +1,7 @@
-Login
+login
 admin
-Delete
+delete
 ssaccount
-Logout
+yes
+logout
 EOF

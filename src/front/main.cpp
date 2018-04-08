@@ -6,6 +6,7 @@
 #include <vector>
 #include <sstream>
 #include <iomanip>
+#include <string>
 #include "functions/showMenu/showMenu.h"
 #include "functions/advertise/advertise.h"
 #include "functions/bid/bid.h"
@@ -17,6 +18,7 @@
 using namespace std;
 
 double maxAddBalanceThisSession = 1000.0;
+string adress = "files/record/ERRORDailyUpdate.txt";
 //HELPER FUNCTIONS
 /*
 Space filler function will basically fill spaces.
@@ -175,7 +177,7 @@ bool userMenu(string userLogName, string userBalance, string userType){
 
                       appendLine = "06 " + userLogName + spaceFiller(15, " ", userLogName) + " " + userType + " " + spaceFiller(9, "0", bal) + bal + "\n";
                       maxAddBalanceThisSession -= add.credit;
-                      uploadUpdates(appendLine,"files/userDailyUpdate.txt");
+                      uploadUpdates(appendLine,adress);
                       //cout << appendLine << endl;
                       cout << "=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=END=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+" << endl;
                       appendLine = "";
@@ -195,7 +197,7 @@ bool userMenu(string userLogName, string userBalance, string userType){
                     string bal = settingPrecision(add.credit);
 
                     appendLine = "06 " + add.targetUserName + spaceFiller(15, " ", add.targetUserName) + " " + userType + " " + spaceFiller(9, "0", bal) + bal;
-                    uploadUpdates(appendLine,"files/userDailyUpdate.txt");
+                    uploadUpdates(appendLine,adress);
                     //cout << appendLine << endl;
                     cout << "=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=END=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+" << endl;
                     appendLine = "";
@@ -226,7 +228,7 @@ bool userMenu(string userLogName, string userBalance, string userType){
                   ss >> marketDays;
 
                   appendLine = "03 " + adver.itemName + spaceFiller(25, " ", adver.itemName)  + " " + userLogName + spaceFiller(15, " ", userLogName) + " " + spaceFiller(3, "0", marketDays) + marketDays + " " + spaceFiller(6, "0", startValue) + startValue;
-                  uploadUpdates(appendLine,"files/userDailyUpdate.txt");
+                  uploadUpdates(appendLine,adress);
                   //cout << appendLine << endl;
                   cout << "=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=END=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+" << endl;
                   appendLine = "";
@@ -249,7 +251,7 @@ bool userMenu(string userLogName, string userBalance, string userType){
 
                   string bidVal = settingPrecision(bid.bidValue);
                   appendLine = "04 " + bid.itemName + spaceFiller(25, " ", bid.itemName) + " " + bid.itemOwner + spaceFiller(15, " ", bid.itemOwner) + " " + userLogName + spaceFiller(15, " ", userLogName) + " " + spaceFiller(6, "0", bidVal) + bidVal;
-                  uploadUpdates(appendLine,"files/userDailyUpdate.txt");
+                  uploadUpdates(appendLine,adress);
                   //cout << appendLine << endl;
                   cout << "=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=END=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+" << endl;
                   appendLine = "";
@@ -273,7 +275,7 @@ bool userMenu(string userLogName, string userBalance, string userType){
                   string startVal = settingPrecision(create.newBalance);
 
                   appendLine = "01 " + create.newUserName + spaceFiller(15, " ", create.newUserName) + " " + create.newUserType + " " + spaceFiller(9, "0", startVal) + startVal;
-                  uploadUpdates(appendLine,"files/userDailyUpdate.txt");
+                  uploadUpdates(appendLine,adress);
                   //cout << appendLine << endl;
                   cout << "=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=END=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+" << endl;
                   appendLine = "";
@@ -297,7 +299,7 @@ bool userMenu(string userLogName, string userBalance, string userType){
                   string curBalance = settingPrecision(deleteC.userBalance);
 
                   appendLine = "02 " + deleteC.deleteUserName + spaceFiller(15, " ", deleteC.deleteUserName) + " " + deleteC.userType + " " + spaceFiller(9, "0", curBalance) + curBalance;
-                  uploadUpdates(appendLine,"files/userDailyUpdate.txt");
+                  uploadUpdates(appendLine,adress);
                   //cout << appendLine << endl;
                   cout << "=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=END=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+" << endl;
                   appendLine = "";
@@ -321,7 +323,7 @@ bool userMenu(string userLogName, string userBalance, string userType){
                   string refundCredit = settingPrecision(refund.credit);
 
                   appendLine = "05 " + refund.buyerName + spaceFiller(15, " ", refund.buyerName) + " " + refund.sellerName + spaceFiller(15, " ", refund.sellerName) + " " + spaceFiller(9, "0", refundCredit) + refundCredit;
-                  uploadUpdates(appendLine,"files/userDailyUpdate.txt");
+                  uploadUpdates(appendLine,adress);
                   //cout << appendLine << endl;
                   cout << "=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=END=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+" << endl;
                   appendLine = "";
@@ -373,9 +375,12 @@ int main(int argc, const char * argv[]) {
                         userBalance = result[2];
                         loggedIn = true;
                         loggedOut = false;
+                        adress="files/record/"+userLogName+"DailyUpdate.txt";
+                        remove(adress.c_str());
+                        cout<<adress<<endl;
                         if (userType != "**"){
                           //everytime login is successfull, create userDailyUpdate. userDailyUpdate file is temporary. Will be deleted after user is logged out, before the system stops.
-                          uploadUpdates("10 " + userLogName + spaceFiller(15, " ", userLogName) + " " + userType + " " + spaceFiller(9, "0", userBalance) + userBalance + "\n","files/userDailyUpdate.txt");
+                          uploadUpdates("10 " + userLogName + spaceFiller(15, " ", userLogName) + " " + userType + " " + spaceFiller(9, "0", userBalance) + userBalance + "\n",adress);
                           break;
                         } else {
                           cout << "Your account has been deleted by admin. Sorry!" << endl;
@@ -407,7 +412,7 @@ int main(int argc, const char * argv[]) {
         if ((userType != "AA") || (userType != "FS") || (userType != "BS") || (userType != "SS")){
             bool users = userMenu(userLogName, userBalance, userType);
             if (users == true){ //true means log out is called
-                uploadUpdates("00 " + userLogName + spaceFiller(15, " ", userLogName) + " " + userType + " " + spaceFiller(9, "0", userBalance) + userBalance + "\n","files/userDailyUpdate.txt");
+                uploadUpdates("00 " + userLogName + spaceFiller(15, " ", userLogName) + " " + userType + " " + spaceFiller(9, "0", userBalance) + userBalance + "\n",adress);
                 loggedOut = true;
                 break;
             }
@@ -416,8 +421,8 @@ int main(int argc, const char * argv[]) {
 
     cout << "Good bye" << endl;
     //Before system stops, we have to push whats inside userDailyUpdate.txt to dailyUpdate.txt, then delete that userDailyUpdate.txt
-    string userDailyInsides, dailyUpdateInsides, line;
-    ifstream fileIn ("files/userDailyUpdate.txt");
+    /*string userDailyInsides, dailyUpdateInsides, line;
+    ifstream fileIn (adress);
     while (getline(fileIn,line)){
         userDailyInsides += line + "\n";
     }
@@ -434,7 +439,7 @@ int main(int argc, const char * argv[]) {
     fileOut << dailyUpdateInsides + userDailyInsides;
     fileOut.close();
 
-    remove("files/userDailyUpdate.txt");
+    remove(adress);*/
 
     return 0;
 }

@@ -1,8 +1,8 @@
-Login
+login
 admin
-Create
+create
 Admin02
 AA
 100
-Logout
+logout
 EOF

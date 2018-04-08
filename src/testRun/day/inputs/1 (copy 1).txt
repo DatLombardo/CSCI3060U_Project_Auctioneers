@@ -1,8 +1,8 @@
-Login
+login
 admin
-Advertise
+advertise
 Acer Monster Computer
-2000.00
+200.00
 20
-Logout
+logout
 EOF

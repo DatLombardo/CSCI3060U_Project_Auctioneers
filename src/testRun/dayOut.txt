@@ -1,0 +1,24 @@
+Please enter a transaction file,  user file, then a items file
+Please enter a transaction file,  user file, then a items file
+LINE: itemName3                 Admin01         005 030.00
+input: itemName3                NULL             Admin01         005 030.00
+line: buyer01         Admin02         000500.00
+buyer: buyer01        
+seller: Admin02        
+amount: 500.0
+sellerUser: User@5b37e0d2
+buyerUser: User@4459eb14
+line: buyer01         seller01        000500.00
+buyer: buyer01        
+seller: seller01       
+amount: 500.0
+sellerUser: null
+buyerUser: null
+ERROR: error seller and buyer no longer exist
+ERROR: item does not exist
+SUCCESSFUL TEST(Backend) RUN: true
+SUCCESSFUL TEST(Item) RUN: true
+SUCCESSFUL TEST(User) RUN: true
+SUCCESSFUL TEST(Parser) RUN: true
+SUCCESSFUL TEST(TransactionProcessor) RUN: true
+asdf
