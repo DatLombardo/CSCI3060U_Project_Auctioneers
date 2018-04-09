@@ -1,3 +1,2 @@
 Acer_Monster_Computer     ULL             admin           018 0200.00
-Acer_Monster_Computer     ULL             admin           019 0200.00
 END

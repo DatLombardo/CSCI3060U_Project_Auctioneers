@@ -26,16 +26,16 @@ cd front
 for file in ../testRun/day/inputs/day$day_num/*
 do
     echo $file
-    ./auctionHouse < $file > a.txt
+    ./auctionHouse < "$file"  > a.txt
     rm a.txt
 done
 cd ..
- #run merged input file
- # cd front
- # ./auctionHouse  < "../$merged_input"
-  #step 1
- # cd ..
-#done
+
+cd  ./testRun/day/inputs/day$day_num/
+  cat *.txt >> ../merged_inputs_day$day_num.txt
+cd  ../../../..
+
+
 
 #merge all transactions for the day
 cd $transaction_outputs

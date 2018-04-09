@@ -1,0 +1,16 @@
+login
+notclyvewidjaya
+bid
+Test_Item_List_Long_name
+admin
+300
+logout
+EOF
+login
+notclyvewidjaya
+bid
+Test_Item_List_Long_name
+admin
+300
+logout
+EOF

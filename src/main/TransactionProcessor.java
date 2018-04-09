@@ -86,6 +86,7 @@ public class TransactionProcessor{
      * @param username
      */
      private void delete(String username){
+       System.out.println("delete: " + username)
          //Remove user instance
          users.remove(parser.removeSpaceFill(username));
 

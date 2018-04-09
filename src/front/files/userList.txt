@@ -3,6 +3,5 @@ admin           AA 999999.99
 admin2          AA 999999.99
 newUser123      FS 000100.00
 Admin02         AA 999999.99
-deletedacc      ** 000012.00
 fsaccount       FS 000100.00
 END
