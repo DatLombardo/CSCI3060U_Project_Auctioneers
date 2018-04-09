@@ -1,0 +1,404 @@
+Enter command 'login' to login, or 'cancel' to cancel
+> Username: files/record/admin2DailyUpdate.txt
+
+Welcome to the auction, admin2!
+Type: AA	Balance: $1e+06
+
+Menus: 
+add = Add balance
+advertise = Advertise an item
+bid = Bid on an item
+create = Create new user
+delete = Delete a user
+refund = Refund an item
+
+list = List all items available
+
+logout = Log out
+
+What would you like to do? (Type 'menu' to display menu) 
+Wrong input, please re-input!
+
+What would you like to do? (Type 'menu' to display menu) 
+Wrong input, please re-input!
+
+What would you like to do? (Type 'menu' to display menu) 
+Wrong input, please re-input!
+
+What would you like to do? (Type 'menu' to display menu) Good bye
+Enter command 'login' to login, or 'cancel' to cancel
+> Username: files/record/admin2DailyUpdate.txt
+
+Welcome to the auction, admin2!
+Type: AA	Balance: $1e+06
+
+Menus: 
+add = Add balance
+advertise = Advertise an item
+bid = Bid on an item
+create = Create new user
+delete = Delete a user
+refund = Refund an item
+
+list = List all items available
+
+logout = Log out
+
+What would you like to do? (Type 'menu' to display menu) 
+Wrong input, please re-input!
+
+What would you like to do? (Type 'menu' to display menu) 
+Wrong input, please re-input!
+
+What would you like to do? (Type 'menu' to display menu) 
+Wrong input, please re-input!
+
+What would you like to do? (Type 'menu' to display menu) Good bye
+Enter command 'login' to login, or 'cancel' to cancel
+> Username: files/record/admin2DailyUpdate.txt
+
+Welcome to the auction, admin2!
+Type: AA	Balance: $1e+06
+
+Menus: 
+add = Add balance
+advertise = Advertise an item
+bid = Bid on an item
+create = Create new user
+delete = Delete a user
+refund = Refund an item
+
+list = List all items available
+
+logout = Log out
+
+What would you like to do? (Type 'menu' to display menu) 
+Wrong input, please re-input!
+
+What would you like to do? (Type 'menu' to display menu) 
+Wrong input, please re-input!
+
+What would you like to do? (Type 'menu' to display menu) 
+Wrong input, please re-input!
+
+What would you like to do? (Type 'menu' to display menu) Good bye
+Enter command 'login' to login, or 'cancel' to cancel
+> Username: files/record/admin2DailyUpdate.txt
+
+Welcome to the auction, admin2!
+Type: AA	Balance: $1e+06
+
+Menus: 
+add = Add balance
+advertise = Advertise an item
+bid = Bid on an item
+create = Create new user
+delete = Delete a user
+refund = Refund an item
+
+list = List all items available
+
+logout = Log out
+
+What would you like to do? (Type 'menu' to display menu) 
+Wrong input, please re-input!
+
+What would you like to do? (Type 'menu' to display menu) 
+Wrong input, please re-input!
+
+What would you like to do? (Type 'menu' to display menu) 
+Wrong input, please re-input!
+
+What would you like to do? (Type 'menu' to display menu) Good bye
+Enter command 'login' to login, or 'cancel' to cancel
+> Username: Username not found.
+Please re-input username, or 'cancel' to cancel.
+> Username: Username not found.
+Please re-input username, or 'cancel' to cancel.
+> Username: files/record/newUser123DailyUpdate.txt
+
+Welcome to the auction, newUser123!
+Type: FS	Balance: $100
+
+Menus: 
+add = Add balance
+advertise = Advertise an item
+bid = Bid on an item
+list = List all items available
+
+logout = Log out
+
+What would you like to do? (Type 'menu' to display menu) 
+Wrong input, please re-input!
+
+What would you like to do? (Type 'menu' to display menu) Good bye
+Enter command 'login' to login, or 'cancel' to cancel
+> Username: Username not found.
+Please re-input username, or 'cancel' to cancel.
+> Username: Username not found.
+Please re-input username, or 'cancel' to cancel.
+> Username: files/record/newUser123DailyUpdate.txt
+
+Welcome to the auction, newUser123!
+Type: FS	Balance: $100
+
+Menus: 
+add = Add balance
+advertise = Advertise an item
+bid = Bid on an item
+list = List all items available
+
+logout = Log out
+
+What would you like to do? (Type 'menu' to display menu) 
+Wrong input, please re-input!
+
+What would you like to do? (Type 'menu' to display menu) Good bye
+Enter command 'login' to login, or 'cancel' to cancel
+> Username: files/record/adminDailyUpdate.txt
+
+Welcome to the auction, admin!
+Type: AA	Balance: $1e+06
+
+Menus: 
+add = Add balance
+advertise = Advertise an item
+bid = Bid on an item
+create = Create new user
+delete = Delete a user
+refund = Refund an item
+
+list = List all items available
+
+logout = Log out
+
+What would you like to do? (Type 'menu' to display menu) 
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+ADVERTISE+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+Item Name (e.g. Macbook Pro, max 25 character including spaces): 
+Starting Price (e.g. 15.31 for $15.31, max $999.99): $
+Days (e.g. 7 for 7 days, max 999 days): 
+Advertise process is done
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=END=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+What would you like to do? (Type 'menu' to display menu) Good bye
+Enter command 'login' to login, or 'cancel' to cancel
+> Username: Username not found.
+Please re-input username, or 'cancel' to cancel.
+> Username: Username not found.
+Please re-input username, or 'cancel' to cancel.
+> Username: Username not found.
+Please re-input username, or 'cancel' to cancel.
+> Username: files/record/adminDailyUpdate.txt
+
+Welcome to the auction, admin!
+Type: AA	Balance: $1e+06
+
+Menus: 
+add = Add balance
+advertise = Advertise an item
+bid = Bid on an item
+create = Create new user
+delete = Delete a user
+refund = Refund an item
+
+list = List all items available
+
+logout = Log out
+
+What would you like to do? (Type 'menu' to display menu) 
+Wrong input, please re-input!
+
+What would you like to do? (Type 'menu' to display menu) Good bye
+Enter command 'login' to login, or 'cancel' to cancel
+> Username: files/record/adminDailyUpdate.txt
+
+Welcome to the auction, admin!
+Type: AA	Balance: $1e+06
+
+Menus: 
+add = Add balance
+advertise = Advertise an item
+bid = Bid on an item
+create = Create new user
+delete = Delete a user
+refund = Refund an item
+
+list = List all items available
+
+logout = Log out
+
+What would you like to do? (Type 'menu' to display menu) 
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=CREATE+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+Username (15 characters, no space): 
+User Type (AA = Admin, FS = Full-Standard, BS = Buy-Standard, SS = Sell-Standard)
+> 
+Create process is done
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=END=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+What would you like to do? (Type 'menu' to display menu) 
+Wrong input, please re-input!
+
+What would you like to do? (Type 'menu' to display menu) Good bye
+Enter command 'login' to login, or 'cancel' to cancel
+> Username: files/record/adminDailyUpdate.txt
+
+Welcome to the auction, admin!
+Type: AA	Balance: $1e+06
+
+Menus: 
+add = Add balance
+advertise = Advertise an item
+bid = Bid on an item
+create = Create new user
+delete = Delete a user
+refund = Refund an item
+
+list = List all items available
+
+logout = Log out
+
+What would you like to do? (Type 'menu' to display menu) 
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=CREATE+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+Enter username to be deleted
+Username: 
+Are you sure you want to delete ssaccount? (yes/no):
+> 
+Delete process is done
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=END=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+What would you like to do? (Type 'menu' to display menu) Good bye
+Enter command 'login' to login, or 'cancel' to cancel
+> Username: Username not found.
+Please re-input username, or 'cancel' to cancel.
+> Username: Username not found.
+Please re-input username, or 'cancel' to cancel.
+> Username: files/record/newUser123DailyUpdate.txt
+
+Welcome to the auction, newUser123!
+Type: FS	Balance: $100
+
+Menus: 
+add = Add balance
+advertise = Advertise an item
+bid = Bid on an item
+list = List all items available
+
+logout = Log out
+
+What would you like to do? (Type 'menu' to display menu) 
+Wrong input, please re-input!
+
+What would you like to do? (Type 'menu' to display menu) Good bye
+Enter command 'login' to login, or 'cancel' to cancel
+> Username: files/record/adminDailyUpdate.txt
+
+Welcome to the auction, admin!
+Type: AA	Balance: $1e+06
+
+Menus: 
+add = Add balance
+advertise = Advertise an item
+bid = Bid on an item
+create = Create new user
+delete = Delete a user
+refund = Refund an item
+
+list = List all items available
+
+logout = Log out
+
+What would you like to do? (Type 'menu' to display menu) 
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+ADVERTISE+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+Item Name (e.g. Macbook Pro, max 25 character including spaces): 
+Starting Price (e.g. 15.31 for $15.31, max $999.99): $
+Days (e.g. 7 for 7 days, max 999 days): 
+Advertise process is done
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=END=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+What would you like to do? (Type 'menu' to display menu) Good bye
+Enter command 'login' to login, or 'cancel' to cancel
+> Username: Username not found.
+Please re-input username, or 'cancel' to cancel.
+> Username: Username not found.
+Please re-input username, or 'cancel' to cancel.
+> Username: Username not found.
+Please re-input username, or 'cancel' to cancel.
+> Username: files/record/adminDailyUpdate.txt
+
+Welcome to the auction, admin!
+Type: AA	Balance: $1e+06
+
+Menus: 
+add = Add balance
+advertise = Advertise an item
+bid = Bid on an item
+create = Create new user
+delete = Delete a user
+refund = Refund an item
+
+list = List all items available
+
+logout = Log out
+
+What would you like to do? (Type 'menu' to display menu) 
+Wrong input, please re-input!
+
+What would you like to do? (Type 'menu' to display menu) Good bye
+Enter command 'login' to login, or 'cancel' to cancel
+> Username: files/record/adminDailyUpdate.txt
+
+Welcome to the auction, admin!
+Type: AA	Balance: $1e+06
+
+Menus: 
+add = Add balance
+advertise = Advertise an item
+bid = Bid on an item
+create = Create new user
+delete = Delete a user
+refund = Refund an item
+
+list = List all items available
+
+logout = Log out
+
+What would you like to do? (Type 'menu' to display menu) 
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=CREATE+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+Username (15 characters, no space): 
+User Type (AA = Admin, FS = Full-Standard, BS = Buy-Standard, SS = Sell-Standard)
+> 
+Create process is done
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=END=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+What would you like to do? (Type 'menu' to display menu) 
+Wrong input, please re-input!
+
+What would you like to do? (Type 'menu' to display menu) Good bye
+Enter command 'login' to login, or 'cancel' to cancel
+> Username: files/record/adminDailyUpdate.txt
+
+Welcome to the auction, admin!
+Type: AA	Balance: $1e+06
+
+Menus: 
+add = Add balance
+advertise = Advertise an item
+bid = Bid on an item
+create = Create new user
+delete = Delete a user
+refund = Refund an item
+
+list = List all items available
+
+logout = Log out
+
+What would you like to do? (Type 'menu' to display menu) 
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=CREATE+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+Enter username to be deleted
+Username: 
+Are you sure you want to delete ssaccount? (yes/no):
+> 
+Delete process is done
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=END=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+What would you like to do? (Type 'menu' to display menu) Good bye

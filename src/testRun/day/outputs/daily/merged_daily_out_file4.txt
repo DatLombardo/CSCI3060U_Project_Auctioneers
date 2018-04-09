@@ -1,0 +1,7 @@
+10 admin2          AA 999999.99
+00 admin2          AA 999999.99
+10 admin           AA 999999.99
+01 Admin02         AA 999999.99
+00 admin           AA 999999.99
+10 newUser123      FS 000100.00
+00 newUser123      FS 000100.00

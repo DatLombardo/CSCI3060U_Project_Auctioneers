@@ -1,0 +1,25 @@
+Please enter a transaction file,  user file, then a items file
+Please enter a transaction file,  user file, then a items file
+LINE: itemName3                 Admin01         005 030.00
+input: itemName3                NULL             Admin01         005 030.00
+line: buyer01         Admin02         000500.00
+buyer: buyer01        
+seller: Admin02        
+amount: 500.0
+sellerUser: null
+buyerUser: User@43d7741f
+ERROR: error seller and buyer no longer exist
+ERROR: error user does not exist
+test1(ItemTest): expected:<kite surfing set         > but was:<null>
+test2(ItemTest): expected:<seller01       > but was:<null>
+test3(ItemTest): expected:<username01     > but was:<null>
+test4(ItemTest): expected:<14> but was:<0>
+test5(ItemTest): null
+test7(ItemTest): expected:<[kite surfing set          seller01        username01      014 03]00.00> but was:<[null null null 000 00]00.00>
+test8(TransactionProcessorTest): expected:<600.0> but was:<100.0>
+test9(TransactionProcessorTest): expected:<600.0> but was:<0.0>
+SUCCESSFUL TEST(Backend) RUN: true
+SUCCESSFUL TEST(Item) RUN: false
+SUCCESSFUL TEST(User) RUN: true
+SUCCESSFUL TEST(Parser) RUN: true
+SUCCESSFUL TEST(TransactionProcessor) RUN: false

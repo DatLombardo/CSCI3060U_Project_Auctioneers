@@ -9,7 +9,7 @@ MAINCLASS=Backend
 all: run clear
 
 run: compile
-	@java -cp $(CLASSP) $(MAINCLASS) transactionFile.txt userlist.txt itemlist.txt
+	@java -cp $(CLASSP) $(MAINCLASS) dailyUpdate.txt userList.txt itemList.txt
 
 compile:
 	@javac -cp $(CLASSP) *.java
