@@ -1,3 +1,8 @@
-Test_Item_List_Long_name  admin2          fsaccount      998 0300.00
-Acer_Monster_Computer     admin2          admin           018 0200.00
+Acer_Monster_Computer     NULL            admin           019 0200.00
+Les_Paul_Guitar           fsaccount       admin           005 0100.00
+Macbook_Pro               admin           notclyvewidjaya 001 0999.99
+Macbook_Pro               ssaccount       notclyvewidjaya 001 0999.00
+Test_Item_List_Long_name  admin           notclyvewidjaya 001 0200.00
+Laptop                    admin           dasdassad       001 0000.12
+Macbook_Pro               fsaccount       notclyvewidjaya 001 0952.00
 END

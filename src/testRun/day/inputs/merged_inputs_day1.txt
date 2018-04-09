@@ -54,3 +54,17 @@ add
 newUser123
 logout
 EOF
+login
+admin
+add
+500
+newUser123
+logout
+EOF
+login
+admin2
+add
+500
+newUser123
+logout
+EOF
