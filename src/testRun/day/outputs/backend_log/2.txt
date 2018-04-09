@@ -7,7 +7,7 @@ buyer: buyer01
 seller: Admin02        
 amount: 500.0
 sellerUser: null
-buyerUser: User@43d7741f
+buyerUser: User@45ff54e6
 ERROR: error seller and buyer no longer exist
 ERROR: error user does not exist
 LINE: Acer_Monster_Computer     admin           020 200.00

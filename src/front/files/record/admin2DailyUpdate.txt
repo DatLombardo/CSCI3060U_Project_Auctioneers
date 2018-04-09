@@ -1,2 +1,3 @@
 10 admin2          AA 999999.99
+06 newUser123      AA 000500.00
 00 admin2          AA 999999.99

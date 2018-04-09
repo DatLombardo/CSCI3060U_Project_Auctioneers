@@ -1,7 +1,7 @@
 login
-admin3
-addcredit
-newUser123
+admin
+add
 500
+newUser123
 logout
 EOF

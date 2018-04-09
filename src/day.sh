@@ -14,20 +14,28 @@ echo run day inputs $day_num
 
 #run through every input for a day
 
-merged_input="testRun/day/inputs/day$day_num/merged_inputs_day$day_num.txt"
+#merged_input="testRun/day/inputs/day$day_num/merged_inputs_day$day_num.txt"
 #clear this file
- > $merged_input
+# > $merged_input
 
 #all transactions to be ran in one file
- cd "./testRun/day/inputs/day$day_num/"
- cat * > "merged_inputs_day$day_num.txt"
- cd ../../../../
-
+# cd "./testRun/day/inputs/day$day_num/"
+# cat * > "merged_inputs_day$day_num.txt"
+# cd ../../../../
+cd front
+for file in ../testRun/day/inputs/day$day_num/*
+do
+    echo $file
+    ./auctionHouse < $file > a.txt
+    rm a.txt
+done
+cd ..
  #run merged input file
-  cd front
-  ./auctionHouse  < "../$merged_input"
+ # cd front
+ # ./auctionHouse  < "../$merged_input"
   #step 1
-  cd ..
+ # cd ..
+#done
 
 #merge all transactions for the day
 cd $transaction_outputs
