@@ -1,7 +1,0 @@
-login
-admin2
-addcredit
-newUser123
-500
-logout
-EOF

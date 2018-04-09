@@ -1,9 +1,0 @@
-10 admin01         AA 090090.00
-05 buyer01         seller01        000500.00
-00 admin01         AA 090090.00
-10 admin01         AA 090090.00
-02 user01          FS 000900.00
-00 admin01         AA 090090.00
-10 user01          FS 090000.00
-04 itemspew01               seller01        user01          200.00
-00 user01          FS 090000.00

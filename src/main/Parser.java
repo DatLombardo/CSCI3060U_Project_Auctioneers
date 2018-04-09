@@ -51,15 +51,10 @@ public class Parser{
         BufferedReader in = new BufferedReader(new FileReader(path));
         String line;
         while ((line = in.readLine()).length() != 3) {
-          System.out.println("item line: "+ line);
-
             Item newItem = new Item(line);
-            if(newItem !=null){
-              System.out.println("read item: "+ newItem.itemFileString());
-
+            if(newItem !=null && newItem.getDaysToExpiry()>0){
               String newKey = removeSpaceFill(newItem.getItemName()) + removeSpaceFill(newItem.getSellerName());
               this.itemList.put(newKey, newItem);
-
             }
 
         }
@@ -138,7 +133,6 @@ public class Parser{
      * @throws IOException
      */
     public void writeItems(String path, Map<String, Item> writeItems ) throws IOException{
-      System.out.println("write items");
 
         File writer = new File(path);
         FileOutputStream fileOut = new FileOutputStream(writer);
@@ -148,7 +142,6 @@ public class Parser{
         Item currItem;
         for (Map.Entry<String, Item> entry : writeItems.entrySet()) {
             currItem = entry.getValue();
-            System.out.println("write: "+ currItem.itemFileString());
 
             bw.write(currItem.itemFileString());
             bw.newLine();

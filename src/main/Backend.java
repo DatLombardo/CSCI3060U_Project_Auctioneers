@@ -73,7 +73,6 @@ public class Backend{
 			Map<String, User> userList = parser.readUserFile(usersPath);
 			Map<String, Item> itemList = parser.readItemFile(itemsPath);
 
-			//
 			ArrayList<String> transactionFile = parser.readTransactionFile(transactionPath);
 			parser.splitTransactions();
 			ArrayList<String> transactions = parser.transactions;
@@ -90,8 +89,8 @@ public class Backend{
 				tp.processTransation(transactions.get(i));
 			}
 
-			parser.writeAccounts("userlist.txt", tp.users);
-			parser.writeItems("itemlist.txt", tp.items);
+			parser.writeAccounts(usersPath, tp.users);
+			parser.writeItems(itemsPath, tp.items);
 			return true;
 	}
 }

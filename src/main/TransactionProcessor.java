@@ -108,8 +108,6 @@ public class TransactionProcessor{
      * @param line
      */
     private void advertise(String line){
-        System.out.println("LINE: "+ line);
-
         //item name
         String input = line.substring(0,25);
         input+="NULL";
@@ -117,7 +115,6 @@ public class TransactionProcessor{
           input+= " ";
         }
         input+=line.substring(25);
-        System.out.println("input: "+ input);
 
         Item ABC=new Item(input);
         String seller = ABC.getSellerName();
@@ -152,17 +149,9 @@ public class TransactionProcessor{
      * @param amount
      */
     private void refund(String line){
-      System.out.println("line: "+line);
       String buyer =  line.substring(0,15);
       String seller = line.substring(16,31);
       double amount = Double.parseDouble(line.substring(32));
-      System.out.println("buyer: "+buyer);
-      System.out.println("seller: "+seller);
-      System.out.println("amount: "+amount);
-
-      System.out.println("sellerUser: "+ users.get(seller));
-      System.out.println("buyerUser: "+ users.get(buyer));
-
 
       User sellerUser =  users.get(seller);
       User buyerUser =   users.get(buyer);

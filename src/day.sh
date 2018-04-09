@@ -9,12 +9,12 @@ itemlist="front/files/itemList.txt"
 userlist="front/files/userList.txt"
 transaction_outputs="front/files/record/"
 
-merge_out_file="./testRun/day/outputs/daily/merged_daily_out_file$day_num.txt"
+merge_out_file="testRun/day/outputs/daily/merged_daily_out_file$day_num.txt"
 echo run day inputs $day_num
 
 #run through every input for a day
 
-merged_input="./testRun/day/inputs/day$day_num/merged_inputs_day$day_num.txt"
+merged_input="testRun/day/inputs/day$day_num/merged_inputs_day$day_num.txt"
 #clear this file
  > $merged_input
 
@@ -25,7 +25,7 @@ merged_input="./testRun/day/inputs/day$day_num/merged_inputs_day$day_num.txt"
 
  #run merged input file
   cd front
-  ./auctionHouse  < "../$merged_input" >> out.txt
+  ./auctionHouse  < "../$merged_input"
   #step 1
   cd ..
 
@@ -40,7 +40,7 @@ echo $day_num backend start
 
 #run the backend to update user and item file
 cd main
-java Backend "../$merge_out_file" "../$userlist" "../$itemlist"
+java Backend "../"$merge_out_file "../"$userlist "../$itemlist"
 echo "daily update"
 cd ..
 

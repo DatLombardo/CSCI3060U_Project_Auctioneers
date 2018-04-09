@@ -16,14 +16,13 @@ public class Item{
    * @param line
    */
   public Item(String line){
-    if(line.length()==68){
-    this.itemName = line.substring(0,25);
-    this.sellerName = line.substring(26,41);
-    this.highestBidder = line.substring(42,57);
-    this.daysToExpiry = Integer.parseInt(line.substring(58,61));
-    this.daysToExpiry-=1;
-    this.bid = Double.parseDouble(line.substring(62));
-  }
+      this.itemName = line.substring(0,25);
+      this.sellerName = line.substring(26,41);
+      this.highestBidder = line.substring(42,57);
+      this.daysToExpiry = Integer.parseInt(line.substring(58,61));
+      this.daysToExpiry-=1;
+      this.bid = Double.parseDouble(line.substring(62));
+
   }
 
   /**
