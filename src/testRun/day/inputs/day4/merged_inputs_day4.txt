@@ -1,8 +1,0 @@
-login
-admin
-create
-Admin02
-AA
-100
-logout
-EOF

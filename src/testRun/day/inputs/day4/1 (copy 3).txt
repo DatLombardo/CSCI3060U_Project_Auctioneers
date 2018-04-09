@@ -1,8 +1,8 @@
 login
 admin
 create
-Admin02
-AA
+notAdmin02
+FS
 100
 logout
 EOF

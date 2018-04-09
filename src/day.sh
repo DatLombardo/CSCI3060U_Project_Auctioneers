@@ -26,8 +26,8 @@ cd front
 for file in ../testRun/day/inputs/day$day_num/*
 do
     echo $file
-    ./auctionHouse < $file > a.txt
-    rm a.txt
+    ./auctionHouse < "$file"  #> a.txt
+    #rm a.txt
 done
 cd ..
  #run merged input file
