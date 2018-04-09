@@ -1,4 +1,3 @@
-Acer_Monster_Computer     admin2          admin           018 0200.00
-Acer_Monster_Computer     admin2          admin           019 0200.00
-Test_Item_List_Long_name  admin2          admin           999 0200.00
+asdf2                     admin2          fsaccount       991 0300.00
+Acer_Monster_Computer2    admin2          admin           011 0200.00
 END

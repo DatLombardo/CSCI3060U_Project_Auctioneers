@@ -10,7 +10,7 @@ cd ..
 #run the daily script 5 times
 itemlist="front/files/itemList.txt"
 
-for i in {1..5}
+for i in {1..2}
 do
   ./day.sh $i
 done
