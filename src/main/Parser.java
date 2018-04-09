@@ -30,9 +30,11 @@ public class Parser{
   public Map<String, User> readUserFile(String path) throws IOException{
         BufferedReader in = new BufferedReader(new FileReader(path));
         String line;
-        while ((line = in.readLine()) != null) {
+        while ((line = in.readLine()).length() != 3) {
             User newUser = new User(line);
-            this.userList.put(removeSpaceFill(newUser.getUsername()), newUser);
+            if(newUser!=null){
+              this.userList.put(removeSpaceFill(newUser.getUsername()), newUser);
+            }
         }
         in.close();
         return this.userList;
@@ -48,12 +50,22 @@ public class Parser{
 	public Map<String, Item> readItemFile(String path) throws IOException{
         BufferedReader in = new BufferedReader(new FileReader(path));
         String line;
-        while ((line = in.readLine()) != null) {
+        while ((line = in.readLine()).length() != 3) {
+          System.out.println("item line: "+ line);
+
             Item newItem = new Item(line);
-            String newKey = removeSpaceFill(newItem.getItemName()) + removeSpaceFill(newItem.getSellerName());
-            this.itemList.put(newKey, newItem);
+            if(newItem !=null){
+              System.out.println("read item: "+ newItem.itemFileString());
+
+              String newKey = removeSpaceFill(newItem.getItemName()) + removeSpaceFill(newItem.getSellerName());
+              this.itemList.put(newKey, newItem);
+
+            }
+
         }
         in.close();
+
+
         return this.itemList;
 	}
 
@@ -111,6 +123,8 @@ public class Parser{
             bw.write(currUser.userFileString());
             bw.newLine();
         }
+        bw.write("END");
+        bw.newLine();
         bw.close();
 
     }
@@ -124,6 +138,8 @@ public class Parser{
      * @throws IOException
      */
     public void writeItems(String path, Map<String, Item> writeItems ) throws IOException{
+      System.out.println("write items");
+
         File writer = new File(path);
         FileOutputStream fileOut = new FileOutputStream(writer);
 
@@ -132,9 +148,14 @@ public class Parser{
         Item currItem;
         for (Map.Entry<String, Item> entry : writeItems.entrySet()) {
             currItem = entry.getValue();
+            System.out.println("write: "+ currItem.itemFileString());
+
             bw.write(currItem.itemFileString());
             bw.newLine();
         }
+        bw.write("END");
+        bw.newLine();
+
         bw.close();
 
     }

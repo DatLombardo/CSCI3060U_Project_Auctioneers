@@ -40,9 +40,7 @@ echo $day_num backend start
 
 #run the backend to update user and item file
 cd main
-backend_log="../testRun/day/outputs/backend_log/$day_num.txt"
-echo $backend_error_log
-java -cp ./junit-4.12.jar:./hamcrest-core-1.3.jar:.  Backend "../$merge_out_file" "../$userlist" "../$itemlist" > $backend_log
+java Backend "../$merge_out_file" "../$userlist" "../$itemlist"
 echo "daily update"
 cd ..
 

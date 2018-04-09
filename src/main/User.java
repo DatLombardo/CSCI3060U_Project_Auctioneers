@@ -15,10 +15,11 @@ public class User{
    * @param line
    */
   public User(String line){
-    if(line.length() == 28){
-    this.username = line.substring(0,15);
-    this.type = line.substring(16,18);
-    this.funds = Double.parseDouble(line.substring(19,28));
+
+    if(line!= null && line.length() == 28){
+      this.username = line.substring(0,15);
+      this.type = line.substring(16,18);
+      this.funds = Double.parseDouble(line.substring(19,28));
   }
   }
 
