@@ -2,7 +2,7 @@ login
 fsaccount
 bid
 asdf
-admin2
+NULL
 300
 logout
 EOF

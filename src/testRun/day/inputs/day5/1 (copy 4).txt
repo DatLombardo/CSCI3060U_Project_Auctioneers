@@ -1,7 +1,7 @@
 login
 admin
-delete
-notAdmin02
-yes
+add
+1
+fsaccount
 logout
 EOF

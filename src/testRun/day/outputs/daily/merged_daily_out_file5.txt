@@ -1,11 +1,2 @@
-10 admin2          AA 999999.99
-06 newUser123      AA 000500.00
-00 admin2          AA 999999.99
 10 admin           AA 999999.99
-02 notAdmin02      FS 000100.00
 00 admin           AA 999999.99
-10 fsaccount       FS 000100.00
-04 Test_Item_List_Long_name  admin2          fsaccount       300.00
-00 fsaccount       FS 000100.00
-10 newUser123      FS 000100.00
-00 newUser123      FS 000100.00

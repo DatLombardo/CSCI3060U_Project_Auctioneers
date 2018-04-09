@@ -2,6 +2,9 @@
 cd front
 make clean
 make
+
+> itemList.txt
+
 cd ..
 
 cd main
@@ -10,7 +13,7 @@ cd ..
 #run the daily script 5 times
 itemlist="front/files/itemList.txt"
 
-for i in {1..2}
+for i in {1..5}
 do
   ./day.sh $i
 done

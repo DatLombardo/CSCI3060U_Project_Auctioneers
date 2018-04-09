@@ -86,6 +86,7 @@ public class TransactionProcessor{
      * @param username
      */
      private void delete(String username){
+       System.out.println("delete: " + username);
          //Remove user instance
          users.remove(parser.removeSpaceFill(username));
 
@@ -110,13 +111,15 @@ public class TransactionProcessor{
     private void advertise(String line){
         //item name
         String input = line.substring(0,25);
-        input+="NULL";
-        for (int i =0;i<=11;i++){
+        input+=" NULL";
+        for (int i =0;i<=10;i++){
           input+= " ";
         }
         input+=line.substring(25);
-
+        System.out.println("item line: " + input);
         Item ABC=new Item(input);
+        System.out.println("item created: " + ABC.itemFileString());
+
         String seller = ABC.getSellerName();
         String itemname= ABC.getItemName();
         items.put(itemname+seller,ABC);
@@ -168,6 +171,7 @@ public class TransactionProcessor{
      * @param balance
      */
     private void addCredit(String line){
+      System.out.println("ADD CREDIT");
 
   String username = line.substring(0,15);
   double balance = Double.parseDouble(line.substring(18));

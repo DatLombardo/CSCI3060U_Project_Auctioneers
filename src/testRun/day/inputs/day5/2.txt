@@ -1,5 +1,4 @@
 login
 admin
-list
 logout
 EOF
