@@ -34,6 +34,7 @@ done
 cd ..
 
 cd  ./testRun/day/inputs/day$day_num/
+  rm ../merged_inputs_day$day_num.txt
   cat *.txt >> ../merged_inputs_day$day_num.txt
 cd  ../../../..
 
